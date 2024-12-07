@@ -6,8 +6,12 @@
     <title>Weather</title>
 </head>
 <body>
-    <form method="GET" action="/get-countries">
-        <input id="get" type="submit" value="GET">
+    <form method="GET"">
+        <input id="get" type="submit" value="Countries" formaction="/get-countries">
+        <input id="get" type="submit" value="City Ranking" formaction="/get-city-ranking">
+        <input id="get" type="submit" value="Supported Country States" formaction="/get-supported-states">
+        <input id="get" type="submit" value="Supported Cities in a State" formaction="get-supported-cities">
+        <input id="get" type="submit" value="Specified city" formaction="get-city">
     </form>
 </body>
 </html>
