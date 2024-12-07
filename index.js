@@ -1,9 +1,10 @@
 import express from "express";
 import axios from "axios";
+import { config } from "./config.js";
 
 const app = express();
 const port = 3000;
-const apiKey = "";
+const apiKey = config.apiKey;
 
 app.get("/", async (req, res) => {
     res.render("index.ejs");
