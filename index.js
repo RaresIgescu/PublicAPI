@@ -3,7 +3,7 @@ import axios from "axios";
 
 const app = express();
 const port = 3000;
-const apiKey = "9748aad4-09a4-4572-86ec-fb157d8139fe";
+const apiKey = "";
 
 app.get("/", async (req, res) => {
     res.render("index.ejs");
