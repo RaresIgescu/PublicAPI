@@ -7,37 +7,49 @@ const port = 3000;
 const apiKey = config.apiKey;
 
 app.get("/", async (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {content: null});
 });
 
 app.get("/get-countries", async (req, res) => {
-    const result = await axios.get("http://api.airvisual.com/v2/countries?key=" +  apiKey);
-    console.log(result.data);
-    res.redirect("/");
-});
-
-app.get("/get-city-ranking", async (req, res) => {
-    const result = await axios.get("http://api.airvisual.com/v2/city?city=Los%20Angeles&state=California&country=USA&key=" + apiKey);
-    console.log(result.data);
-    res.redirect("/");
+    try {
+        const result = await axios.get("http://api.airvisual.com/v2/countries?key=" +  apiKey);
+        res.render("index.ejs", {content: JSON.stringify(result.data)});
+    } catch (error) {
+        res.render("index.ejs", {content: JSON.stringify(error.response.data)});
+    }
 });
 
 app.get("/get-supported-states", async(req, res) => {
-    const result = await axios.get("http://api.airvisual.com/v2/states?country=Romania&key=" + apiKey);
-    console.log(result.data);
-    res.redirect("/");
+    try {
+        const country = req.query.country;
+        const result = await axios.get("http://api.airvisual.com/v2/states?country=" + country + "&key=" + apiKey);
+        res.render("index.ejs", {content: JSON.stringify(result.data)});
+    } catch (error) {
+        res.render("index.ejs", {content: JSON.stringify(error.response.data)});
+    }
 });
 
 app.get("/get-supported-cities", async(req, res) => {
-    const result = await axios.get("http://api.airvisual.com/v2/cities?state=Alabama&country=USA&key=" + apiKey);
-    console.log(result.data);
-    res.redirect("/");
+    try {
+        const country = req.query.country;
+        const state = req.query.state;
+        const result = await axios.get("http://api.airvisual.com/v2/cities?state=" + state + "&country=" + country + "&key=" + apiKey);
+        res.render("index.ejs", {content: JSON.stringify(result.data)});
+    } catch (error) {
+        res.render("index.ejs", {content: JSON.stringify(error.response.data)});
+    }
 });
 
 app.get("/get-city", async(req, res) => {
-    const result = await axios.get("http://api.airvisual.com/v2/city?city=Vaslui&state=Vaslui&country=Romania&key=" + apiKey)
-    console.log(result.data);
-    res.redirect("/");
+    try {
+        const country = req.query.country;
+        const state = req.query.state;
+        const city = req.query.city;
+        const result = await axios.get("http://api.airvisual.com/v2/city?city=" + city + "&state=" + state + "&country=" + country +"&key=" + apiKey);
+        res.render("index.ejs", {content: JSON.stringify(result.data)});
+    } catch (error) {
+        res.render("index.ejs", {content: JSON.stringify(error.response.data)});
+    }
 });
 
 app.listen(port, () => {
