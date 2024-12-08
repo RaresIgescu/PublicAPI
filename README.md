@@ -28,7 +28,7 @@ The application allows users to:
 1. **Local Setup**  
    - Clone this repository:  
      ```bash
-     git clone https://github.com/username/Weather-App.git
+     git clone https://github.com/username/PublicAPI.git
      cd Weather-App
      ```  
    - Install dependencies:  
