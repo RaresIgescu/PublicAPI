@@ -1,23 +1,52 @@
-Weather App - AirVisual API Based (Community Version)
-Descriere generală
-Acest proiect reprezintă o aplicație web care utilizează API-ul public AirVisual pentru a furniza date în timp real despre vreme, calitatea aerului și locațiile suportate. Proiectul este ideal pentru explorarea funcționalităților API-urilor publice, autentificare cu chei API și integrarea datelor JSON într-o aplicație web modernă.
+# **Weather App - AirVisual API Based (Community Version)**  
 
-Aplicația permite utilizatorului să:
+## **Overview**  
+This project is a web application that uses the public AirVisual API to provide real-time data about weather, air quality, and supported locations. The project is ideal for exploring public API functionality, API key authentication, and integrating JSON data into a modern web application.  
 
-Listeze țările suportate de API.
-Afișeze statele dintr-o anumită țară.
-Obțină orașele suportate dintr-un anumit stat și țară.
-Vizualizeze date detaliate despre vreme și poluare pentru un oraș specific.
-Tehnologii utilizate
-Backend: Node.js, Express.js
-Frontend: EJS pentru șabloane, HTML, CSS, Bootstrap pentru design responsiv.
-HTTP Client: Axios pentru interogarea API-ului.
-Funcționalități principale
-Interogare API:
-Aplicația utilizează AirVisual API cu autentificare prin chei API pentru a obține și procesa date complexe despre locații și condițiile meteo/aer.
+The application allows users to:  
+- List the countries supported by the API.  
+- Display states in a specified country.  
+- Retrieve cities supported in a specific state and country.  
+- View detailed weather and pollution data for a specific city.  
 
-Formular interactiv:
-Utilizatorul poate introduce țara, statul sau orașul dorit pentru a obține informații personalizate.
+## **Technologies Used**  
+- **Backend**: Node.js, Express.js  
+- **Frontend**: EJS for templating, HTML, CSS, Bootstrap for responsive design.  
+- **HTTP Client**: Axios for API requests.  
 
-Afișare dinamică a datelor:
-Datele sunt afișate într-un format lizibil folosind formatarea JSON direct în interfața web.
+## **Key Features**  
+1. **API Integration**:  
+   The application utilizes the AirVisual API with API key authentication to fetch and process complex data about locations and weather/air conditions.  
+
+2. **Interactive Forms**:  
+   Users can input the desired country, state, or city to get personalized information.  
+
+3. **Dynamic Data Display**:  
+   The data is displayed in a readable format using JSON formatting directly on the web interface.  
+
+## **How to Use**  
+1. **Local Setup**  
+   - Clone this repository:  
+     ```bash
+     git clone https://github.com/username/Weather-App.git
+     cd Weather-App
+     ```  
+   - Install dependencies:  
+     ```bash
+     npm install
+     ```  
+   - Configure the API key in the `.env` file:  
+     ```env
+     API_KEY=your_api_key
+     ```  
+   - Start the server:  
+     ```bash
+     npm start
+     ```  
+
+2. **Navigate the Application**  
+   Open the app in your browser at `http://localhost:3000` and use the interface to explore the available locations and data.
+
+## **Future Plans**  
+- Add advanced filtering functionality for locations.  
+- Implement a feature for graphical visualization of weather and air quality data.  
